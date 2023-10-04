@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import org.java.POJO.Pizza;
 import org.java.interfaces.PizzaRepo;
+import org.java.serv.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,8 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner{
 	
 	@Autowired
 	private PizzaRepo pizzaRepo;
+	@Autowired
+	private PizzaService pizzaService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringLaMiaPizzeriaCrudApplication.class, args);
@@ -33,7 +36,12 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner{
 		pizzaRepo.save(diavola);
 		pizzaRepo.save(bufala);
 		pizzaRepo.save(marinara);
-		System.out.println("bravoooo!!!!");
+		
+//		margherita.setName("margherita2.0");
+//		pizzaService.updatePizza(margherita);
+//		
+//		pizzaService.deleteById(marinara.getId());
+	
 	}
 	
 	

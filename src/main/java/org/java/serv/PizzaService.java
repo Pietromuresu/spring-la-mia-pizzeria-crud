@@ -39,6 +39,7 @@ public class PizzaService {
 		pizzaToUpdate.setDescription(pizza.getDescription());
 		pizzaToUpdate.setFotoUrl(pizza.getFotoUrl());
 		pizzaToUpdate.setPrice(pizza.getPrice());
+	
 		
 		pizzaRepo.save(pizzaToUpdate);
 	}
