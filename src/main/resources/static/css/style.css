@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.pm-card{
+	height: 350px;
+	max-width: 250px;
+	overflow: hidden;
+}
+
+.pm-card>img{
+	height: 250px;
+}
+
+.pm-card>card-body{
+	height: 70px;
+}
