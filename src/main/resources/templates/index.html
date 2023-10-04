@@ -12,15 +12,35 @@
 	<div class="container mt-5">		
 		<h1 class="text-center">Menù</h1>
 		<div class="container">		
-			<ul class="list-group">
-				<li
+			<div class="row ">
+				<div
+				
 					th:each="pizza : ${pizzas}"
 					th:object="${pizza}"
-					class="list-group-item"
+					class="col"
 				>
-					[[*{name}]]
-				</li>
-			</ul>
+					<div class="card mb-4 overflow-hidden" style="height: 350px; max-width: 250px;">
+						
+						<img class="card-img-top" height="250px" th:alt="*{name}" th:src="*{fotoUrl}">
+						
+						<h5 class="mt-2 text-center">					
+							[[*{name.toUpperCase()}]]
+						</h5>
+						
+						<div class="card-body " style="height: 70px;">
+							<p class="card-text">
+								[[*{description}]]
+							</p>
+						</div>
+						
+						<div class="card-body ">
+							<p class="card-text">
+								[[*{price}]] $
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 			<h3 class="text-center mt-5" th:if="${pizzas.size() == 0}">Non ci sono pizze da mostrare..</h3>
 		</div>
 	</div>
