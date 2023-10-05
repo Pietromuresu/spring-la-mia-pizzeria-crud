@@ -16,8 +16,8 @@
 	<nav class="navbar bg-body-tertiary">
 	  <div class="container-fluid">
 	    <a href="/" class="navbar-brand">Home</a>
-	    <form class="d-flex" role="search">
-	      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+	    <form class="d-flex" role="search" action="/{name}">
+	      <input class="form-control me-2" type="text" placeholder="Search a pizza" aria-label="Search" name="name" th:value="${searchedName}">
 	      <button class="btn btn-outline-secondary" type="submit">Search</button>
 	    </form>
 	  </div>

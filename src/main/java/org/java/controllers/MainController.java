@@ -29,6 +29,27 @@ public class MainController {
 		return "index";
 	}
 	
+	@RequestMapping("/{name}")
+	public String getByName(Model model, 
+							@RequestParam(required = false) String name) {
+		List<Pizza> pizzas = null;
+		
+		String searched = name;
+		
+		if(name.isEmpty()) {
+			
+			pizzas = pizzaServ.findAll();
+		}else {
+			
+			pizzas = pizzaServ.findByName(name);
+		}
+		
+		model.addAttribute("pizzas", pizzas);
+		model.addAttribute("searchedName", searched);
+		
+		return "index";
+	}
+	
 	@GetMapping("pizza/{id}")
 	public String show(@PathVariable Long id, Model model) {
 		

@@ -23,6 +23,11 @@ public class PizzaService {
 		return pizzaRepo.findAll();
 	}
 	
+	public List<Pizza> findByName(String name) {
+		
+		return pizzaRepo.findByNameContaining(name);
+	}
+	
 	public Pizza findById(Long id) {
 		
 		return pizzaRepo.findById(id).get();
