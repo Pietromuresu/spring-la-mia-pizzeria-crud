@@ -29,7 +29,7 @@ public class MainController {
 		return "index";
 	}
 	
-	@RequestMapping("/{name}")
+	@RequestMapping("/name")
 	public String getByName(Model model, 
 							@RequestParam(required = false) String name) {
 		List<Pizza> pizzas = null;
