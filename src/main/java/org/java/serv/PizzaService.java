@@ -17,10 +17,12 @@ public class PizzaService {
 		
 		pizzaRepo.save(pizza);
 	}
+	
 	public List<Pizza> findAll() {
 		
 		return pizzaRepo.findAll();
 	}
+	
 	public Pizza findById(Long id) {
 		
 		return pizzaRepo.findById(id).get();

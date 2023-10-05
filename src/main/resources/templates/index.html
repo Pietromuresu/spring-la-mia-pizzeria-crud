@@ -13,6 +13,10 @@
 <title>La mia pizzeria - Pietro M.</title>
 </head>
 <body>
+	<header th:replace="frags/header :: header()">
+		
+	</header>
+	
 	<div class="container mt-5">		
 		<h1 class="text-center">Menù</h1>
 		<div class="container">		
@@ -24,23 +28,32 @@
 					class="col"
 				>
 					<div class="card pm-card mb-4 ">
-						
-						<img class="card-img-top" th:alt="*{name}" th:src="*{fotoUrl}">
+						<div class="pm-img-container">						
+							<img class="card-img-top" th:alt="*{name}" th:src="*{fotoUrl}">                             
+						</div>
 						
 						<h5 class="mt-2 text-center">					
 							[[*{name.toUpperCase()}]]
 						</h5>
 						
 						<div class="card-body " >
-							<p class="card-text">
+							<p class="pm-pizza-desc">
+								<strong>Description: </strong>
 								[[*{description}]]
 							</p>
 						</div>
 						
 						<div class="card-body ">
 							<p class="card-text">
+								<strong>Price: </strong>
 								[[*{price}]] $
 							</p>
+						</div>
+						
+						<div class="card-body ">
+							<a th:href="| /pizza/*{id} |" class="btn btn-secondary">
+								See details
+							</a>
 						</div>
 					</div>
 				</div>

@@ -13,3 +13,17 @@
 .pm-card>card-body{
 	height: 70px;
 }
+
+.pm-pizza-desc{
+	max-height: 50px;
+	font-size: 13px;
+}
+
+.pm-img-container{
+	height: 2500px !important;
+	overflow: hidden;
+}
+
+.pm-img-show{
+	width: 400px ;
+}
