@@ -22,10 +22,10 @@ public class Pizza {
 	@Column(nullable = false, columnDefinition = "TEXT")
 	private String description;
 	
-	@Column(length=100, nullable = false, columnDefinition = "TEXT")
+	@Column(nullable = false, columnDefinition = "TEXT")
 	private String fotoUrl;
 	
-	@Column(length=100, nullable = false)
+	@Column(nullable = false)
 	private BigDecimal price;
 	
 	
