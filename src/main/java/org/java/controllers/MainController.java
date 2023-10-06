@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,11 +41,13 @@ public class MainController {
 	}
 	
 	@PostMapping("/create")
-	public String store(Model model) {
+	public String store(Model model, @ModelAttribute Pizza pizza) {
 		
-		
+		pizzaServ.save(pizza);
 		return "create";
 	}
+	
+	
 	
 	@RequestMapping("/name")
 	public String getByName(Model model, 
