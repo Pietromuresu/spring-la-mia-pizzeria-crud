@@ -2,12 +2,16 @@ package org.java.POJO;
 
 import java.math.BigDecimal;
 
+import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Pizza {
@@ -17,15 +21,20 @@ public class Pizza {
 	private Long id; 
 	
 	@Column(length=100, nullable = false)
+	@Length(min = 3, max = 100, message= "il nome deve avere un minimo di 3 caratteri ed un massimo di 100")
 	private String name;
 	
 	@Column(nullable = false, columnDefinition = "TEXT")
+	@Length(min = 5, message= "La descrizione deve avere un minimo di 5 caratteri ")
 	private String description;
 	
 	@Column(nullable = false, columnDefinition = "TEXT")
+	@Length(min = 3, max = 100, message= "Devi inserire almeno una foto")
 	private String fotoUrl;
 	
 	@Column(nullable = false)
+	@NotNull(message="E' necessario inserire anche il prezzo")
+	@Min(value=1, message= "La pizza non può essere gratis" )
 	private BigDecimal price;
 	
 	
