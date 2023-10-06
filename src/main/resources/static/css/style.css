@@ -27,3 +27,8 @@
 .pm-img-show{
 	width: 400px ;
 }
+
+.pm-create-form{
+	width: 600px;
+	margin: 40px auto;
+}

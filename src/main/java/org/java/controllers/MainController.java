@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,6 +28,22 @@ public class MainController {
 		model.addAttribute("pizzas", pizzas);
 		
 		return "index";
+	}
+	
+	@GetMapping("/create")
+	public String createForm(Model model) {
+		
+		
+		model.addAttribute("pizza", new Pizza());
+		
+		return "create";
+	}
+	
+	@PostMapping("/create")
+	public String store(Model model) {
+		
+		
+		return "create";
 	}
 	
 	@RequestMapping("/name")
@@ -50,7 +67,7 @@ public class MainController {
 		return "index";
 	}
 	
-	@GetMapping("pizza/{id}")
+	@GetMapping("/pizza/{id}")
 	public String show(@PathVariable Long id, Model model) {
 		
 		Pizza pizza = pizzaServ.findById(id);
