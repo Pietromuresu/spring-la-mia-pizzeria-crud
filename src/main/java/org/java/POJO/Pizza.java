@@ -10,7 +10,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -25,7 +24,7 @@ public class Pizza {
 	private String name;
 	
 	@Column(nullable = false, columnDefinition = "TEXT")
-	@Length(min = 5, message= "La descrizione deve avere un minimo di 5 caratteri ")
+	@Length(min = 5, max = 65535, message= "La descrizione deve avere un minimo di 5 caratteri ")
 	private String description;
 	
 	@Column(nullable = false, columnDefinition = "TEXT")
@@ -74,10 +73,14 @@ public class Pizza {
 
 
 	public String getFotoUrl() {
+
 		return fotoUrl;
 	}
 	public void setFotoUrl(String fotoUrl) {
-		this.fotoUrl = fotoUrl;
+		String baseUrl = "/imgs/";
+		
+		
+		this.fotoUrl = baseUrl + fotoUrl;
 	}
 
 

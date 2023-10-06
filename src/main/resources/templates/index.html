@@ -6,7 +6,7 @@
 <!--/* BOOTSTRAP */-->
 <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css} "/>
 
-<!--/* STYLE */-->
+<!--/* STYLE */-->	
 <link rel="stylesheet" th:href="@{/css/style.css}" >
 
 
@@ -17,16 +17,19 @@
 		
 	</header>
 	
-	<a href="/create" class="btn btn-secondary">
-		Crea nuova
-	</a>
 	
 	<div class="container mt-5">		
+		<div class="d-flex flex-row-reverse mt-4 me-4">
+			<a href="/create" class="btn btn-secondary">
+				Add new pizza
+			</a>
+		</div>
+		
 		<h1 class="text-center">Menù</h1>
+		
 		<div class="container">		
 			<div class="row ">
-				<div
-				
+				<div		
 					th:each="pizza : ${pizzas}"
 					th:object="${pizza}"
 					class="col"
@@ -62,7 +65,9 @@
 					</div>
 				</div>
 			</div>
+			
 			<h3 class="text-center mt-5" th:if="${pizzas.size() == 0}">Non ci sono pizze da mostrare..</h3>
+		
 		</div>
 	</div>
 </body>

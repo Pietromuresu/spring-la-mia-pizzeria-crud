@@ -25,11 +25,11 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Pizza margherita = new Pizza("margherita", "pom., mozz., basilico", "/imgs/margherita.webp", new BigDecimal(4.5));
-		Pizza ortolana = new Pizza("ortolana", "pom., mozz., verdure grigliate miste", "/imgs/ortolana.jpeg", new BigDecimal(4.5));
-		Pizza diavola = new Pizza("diavola", "pom., mozz., salsiccia secca piccante, olio piccante", "/imgs/diavola.jpeg", new BigDecimal(7.5));
-		Pizza bufala = new Pizza("bufala", "pom., mozzarella di bufala, basilico", "/imgs/bufala.jpeg", new BigDecimal(9));
-		Pizza marinara = new Pizza("marinara", "pom., aglio, origano, acciughe", "/imgs/marinara.jpeg", new BigDecimal(7));
+		Pizza margherita = new Pizza("margherita", "pom., mozz., basilico", "margherita.webp", new BigDecimal(4.5));
+		Pizza ortolana = new Pizza("ortolana", "pom., mozz., verdure grigliate miste", "ortolana.jpeg", new BigDecimal(4.5));
+		Pizza diavola = new Pizza("diavola", "pom., mozz., salsiccia secca piccante, olio piccante", "diavola.jpeg", new BigDecimal(7.5));
+		Pizza bufala = new Pizza("bufala", "pom., mozzarella di bufala, basilico", "bufala.jpeg", new BigDecimal(9));
+		Pizza marinara = new Pizza("marinara", "pom., aglio, origano, acciughe", "marinara.jpeg", new BigDecimal(7));
 	
 		pizzaRepo.save(margherita);
 		pizzaRepo.save(ortolana);
