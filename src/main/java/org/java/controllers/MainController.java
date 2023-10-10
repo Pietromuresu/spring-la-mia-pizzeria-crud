@@ -48,15 +48,8 @@ public class MainController {
 						@ModelAttribute @Valid Pizza pizza, 
 						BindingResult bindingResult
 						) {
+		return savePizza(model, pizza, bindingResult);
 		
-		if (bindingResult.hasErrors()) {
-
-			return "create";
-		} else {
-			pizzaServ.save(pizza);
-		}
-		
-		return "redirect:/";
 	}
 	
 	@GetMapping("/update/{id}")
@@ -75,14 +68,7 @@ public class MainController {
 						BindingResult bindingResult
 						) {
 		
-		if (bindingResult.hasErrors()) {
-
-			return "create";
-		} else {
-			pizzaServ.save(pizza);
-		}
-		
-		return "redirect:/";
+		return savePizza(model, pizza, bindingResult);
 	}
 	
 	
@@ -125,5 +111,20 @@ public class MainController {
 
 		return "redirect:/";
 		
+	}
+	
+	
+	private String savePizza(Model model, 
+			@ModelAttribute @Valid Pizza pizza, 
+			BindingResult bindingResult) {
+		
+		if (bindingResult.hasErrors()) {
+
+			return "create";
+		} else {
+			pizzaServ.save(pizza);
+		}
+		
+		return "redirect:/";
 	}
 }
