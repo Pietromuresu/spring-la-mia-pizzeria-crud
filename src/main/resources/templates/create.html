@@ -16,8 +16,11 @@
 		
 	</header>
 	
-	<h1 class="text-center mt-4">
+	<h1 th:if="${pizza.getId() < 1}" class="text-center mt-4">
 		Crea una nuova pizza
+	</h1>
+	<h1 th:if="${pizza.getId() > 0}" class="text-center mt-4">
+		Modifica pizza: [[${pizza.getName()}]]
 	</h1>
 	
 	<form 
@@ -26,7 +29,7 @@
 		th:object="${pizza}"
 	>
 		<div class="form-group" >
-			<label for="name">
+			<label for="name"> 
 				<strong>
 					Name
 				</Strong>

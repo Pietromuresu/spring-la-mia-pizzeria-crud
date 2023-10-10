@@ -59,6 +59,32 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/update/{id}")
+	public String updatePizza(@PathVariable Long id , Model model) {
+		
+		
+		Pizza pizzaToUpdate = pizzaServ.findById(id);
+		model.addAttribute("pizza", pizzaToUpdate);
+		
+		return "create";
+	}
+	
+	@PostMapping("/update/{id}")
+	public String update( Model model, 
+						@ModelAttribute @Valid Pizza pizza, 
+						BindingResult bindingResult
+						) {
+		
+		if (bindingResult.hasErrors()) {
+
+			return "create";
+		} else {
+			pizzaServ.save(pizza);
+		}
+		
+		return "redirect:/";
+	}
+	
 	
 	
 	@RequestMapping("/name")

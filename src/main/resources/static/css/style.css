@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
 .pm-card{
+
 	height: 350px;
-	max-width: 250px;
+	max-width: 270px;
 	overflow: hidden;
+	padding-bottom: 10px;
 }
 
 .pm-card>img{
@@ -32,3 +34,15 @@
 	width: 600px;
 	margin: 40px auto;
 }
+
+.pm-delete-btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+}
+
+.pm-card:hover .pm-delete-btn{
+	display: block;
+}
+

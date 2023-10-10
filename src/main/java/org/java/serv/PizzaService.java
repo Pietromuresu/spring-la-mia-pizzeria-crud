@@ -42,10 +42,10 @@ public class PizzaService {
 		Long id = pizza.getId();
 		Pizza pizzaToUpdate = pizzaRepo.findById(id).get();
 		
-		pizzaToUpdate.setName(pizza.getName());
-		pizzaToUpdate.setDescription(pizza.getDescription());
-		pizzaToUpdate.setFotoUrl(pizza.getFotoUrl());
-		pizzaToUpdate.setPrice(pizza.getPrice());
+//		pizzaToUpdate.setName(pizza.getName());
+//		pizzaToUpdate.setDescription(pizza.getDescription());
+//		pizzaToUpdate.setFotoUrl(pizza.getFotoUrl());
+//		pizzaToUpdate.setPrice(pizza.getPrice());
 	
 		
 		pizzaRepo.save(pizzaToUpdate);
