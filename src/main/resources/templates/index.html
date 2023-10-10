@@ -36,7 +36,7 @@
 				>
 					<div class="card pm-card mb-4 ">
 						<div class="pm-img-container">						
-							<img class="card-img-top" th:alt="*{name}" th:src="*{fotoUrl}">                             
+							<img class="card-img-top" th:alt="*{name}" th:src="*{getFullFotoUrl(fotoUrl)}">                             
 						</div>
 						
 						<h5 class="mt-2 text-center">					
@@ -56,11 +56,20 @@
 								[[*{price}]] $
 							</p>
 						</div>
-						
-						<div class="card-body ">
-							<a th:href="| /pizza/*{id} |" class="btn btn-secondary">
-								See details
-							</a>
+						<div class="row">
+							
+							<div class="card-body col-8">
+								<a th:href="| /pizza/*{id} |" class="btn btn-secondary">
+									See details
+								</a>
+							</div>
+							<div class="card-body col-4">
+								<form th:action="@{/delete/{id}(id=*{id})}" method="POST">
+									<button type="submit" class="btn btn-secondary">
+										X
+									</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>

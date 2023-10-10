@@ -92,4 +92,12 @@ public class MainController {
 		return "show";
 	}
 	
+	@PostMapping("/delete/{id}")
+	public String deletePizza(@PathVariable("id") Long id) {
+		
+		pizzaServ.deleteById(id);
+
+		return "redirect:/";
+		
+	}
 }

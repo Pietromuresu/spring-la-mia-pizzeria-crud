@@ -77,11 +77,17 @@ public class Pizza {
 		return fotoUrl;
 	}
 	public void setFotoUrl(String fotoUrl) {
+		
+		this.fotoUrl = fotoUrl;
+	}
+	
+	public String getFullFotoUrl(String fotoUrl) {
 		String baseUrl = "/imgs/";
 		
 		
-		this.fotoUrl = baseUrl + fotoUrl;
+		return baseUrl + fotoUrl;
 	}
+	
 
 
 	public BigDecimal getPrice() {
